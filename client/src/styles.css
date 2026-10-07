@@ -1,0 +1,26 @@
+:root { --bg:#f3f6f4; --ink:#14221c; --muted:#5b6b63; --accent:#1f6f54; --line:#d3ddd7; --err:#a1272b; font-family: "Avenir Next", "Segoe UI", system-ui, sans-serif; }
+@media (prefers-color-scheme: dark) { :root { --bg:#101a16; --ink:#e6efe9; --muted:#93a59b; --accent:#4cc79a; --line:#2a3b33; --err:#ff8a8d; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); }
+button, input { font:inherit; color:inherit; }
+input { width:100%; padding:.7rem .8rem; border:1px solid var(--line); border-radius:6px; background:transparent; }
+:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+.primary { background:var(--accent); color:#fff; border:0; border-radius:6px; padding:.7rem 1.1rem; cursor:pointer; white-space:nowrap; }
+@media (prefers-color-scheme: dark) { .primary { color:#06130d; } }
+.link { background:none; border:0; color:var(--muted); cursor:pointer; text-decoration:underline; }
+.error { color:var(--err); font-size:.9rem; }
+.auth { max-width:360px; margin:12vh auto; padding:0 1.25rem; display:grid; gap:.75rem; }
+.auth h1 { font-size:2.4rem; margin:0; letter-spacing:-.02em; }
+.auth p { margin:0 0 .5rem; color:var(--muted); }
+.habits { max-width:640px; margin:0 auto; padding:2rem 1.25rem; }
+.habits header { display:flex; justify-content:space-between; align-items:baseline; }
+.add { display:flex; gap:.5rem; margin:1rem 0 1.5rem; }
+ul { list-style:none; padding:0; margin:0; }
+li { display:grid; grid-template-columns:auto 1fr auto; gap:.25rem .9rem; align-items:center; padding:.9rem 0; border-top:1px solid var(--line); }
+.check { grid-row:span 2; width:2.2rem; height:2.2rem; border-radius:50%; border:2px solid var(--accent); background:none; cursor:pointer; color:#fff; font-weight:700; }
+li.done .check { background:var(--accent); transform:scale(1.05); transition:transform .15s; }
+li.done .name { text-decoration:line-through; color:var(--muted); }
+.streak { grid-column:2 / 4; color:var(--muted); font-size:.85rem; }
+.streak b { color:var(--accent); font-size:1.1rem; }
+.empty { color:var(--muted); }
+@media (prefers-reduced-motion: reduce) { * { transition:none !important; } }
